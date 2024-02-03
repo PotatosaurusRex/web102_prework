@@ -25,7 +25,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='<blockquote class="imgur-embed-pub" lang="en" data-id="a/tZQ5lMv"  ><a href="//imgur.com/a/tZQ5lMv">Codepath Prework Website</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/tZQ5lMv.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ... ScreenToGif
