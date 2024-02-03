@@ -27,32 +27,34 @@ const gamesContainer = document.getElementById("games-container");
 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
-    for (let i = 0; i < games.length; -i++) {
+    for (let i = 0; i < games.length; i++) {
         const game = 
-            `<div class="game-card">
+            `<div id=${i} class="game-card">
                 <h1>${games[i].name}</h1>
                 <p>${games[i].description}</p>
                 <img src=${games[i].img} class="game-img" />
             </div>`;
-        gamesContainer.innerHTML += (game);
+        gamesContainer.innerHTML += (game);    
     }
-    // loop over each item in the data
 
+    console.log(gamesContainer.children.length);
+    for (let i = 0; i < gamesContainer.children.length; i++) {
+        showCard(i);
+    }
+}
 
-        // create a new div element, which will become the game card
-
-
-        // add the class game-card to the list
-
-
-        // set the inner HTML using a template literal to display some info 
-        // about each game
-        // TIP: if your images are not displaying, make sure there is space
-        // between the end of the src attribute and the end of the tag ("/>")
-
-
-        // append the game to the games-container
-
+function showCard(cardId) {
+    console.log(cardId);
+    let element = document.getElementById(cardId);
+    let opacity = 0;
+    let fadeIn = setInterval(() => {
+        if (opacity >= 1) {
+            clearInterval(fadeIn);
+        }
+        element.style.opacity = opacity;
+        opacity += 0.05;
+        // console.log(opacity);
+    }, 10 * cardId);
 }
 
 // call the function we just defined using the correct variable
@@ -111,7 +113,7 @@ function filterUnfundedOnly() {
     console.log(unfunded);
 }
 
-filterUnfundedOnly();
+// filterUnfundedOnly();
 // show only games that are fully funded
 function filterFundedOnly() {
     deleteChildElements(gamesContainer);
@@ -126,7 +128,7 @@ function filterFundedOnly() {
     console.log(funded);
 }
 
-filterFundedOnly();
+// filterFundedOnly();
 
 // show all games
 function showAllGames() {
@@ -136,7 +138,7 @@ function showAllGames() {
 
 }
 
-showAllGames();
+// showAllGames();
 // select each button in the "Our Games" section
 const unfundedBtn = document.getElementById("unfunded-btn");
 unfundedBtn.addEventListener("click", filterUnfundedOnly);
